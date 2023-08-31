@@ -13,9 +13,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header></header>
+    <header class="container mx-auto">
+      <!-- nav section -->
+      <nav>
+        <div class="flex justify-between mt-12 mb-7">
+          <div>
+            <img src="./img/Logo.png" alt="logo" />
+          </div>
+          <div>
+            <button class="btn">Sort by view</button>
+          </div>
+          <div>
+            <button class="btn">Blog</button>
+          </div>
+        </div>
+        <hr />
+      </nav>
+    </header>
 
-    <main></main>
+    <main class="container mx-auto">
+      <!-- all tab section -->
+      <section
+        id="category-tab-container"
+        class="flex justify-center space-x-10 my-8"
+      >
+        <!-- <div class="flex justify-center space-x-6 my-8">
+          <div>
+            <button class="btn"></button>
+          </div>
+          <div>
+            <button class="btn"></button>
+          </div>
+          <div>
+            <button class="btn"></button>
+          </div>
+          <div>
+            <button class="btn"></button>
+          </div>
+        </div> -->
+        <!-- <a onclick="handleCategory()" class="btn" href="#"></a> -->
+      </section>
+
+      <!-- video card section -->
+      <section
+        id="video-card-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+      ></section>
+    </main>
 
     <footer></footer>
 
