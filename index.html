@@ -22,16 +22,17 @@
           </div>
           <div>
             <button
-              class="btn px-4 py-2 focus:bg-red-500 focus:text-white rounded-md bg-gray-100 font-semibold"
+              class="btn px-4 py-1 focus:bg-red-500 focus:text-white rounded-md bg-gray-100 font-semibold"
             >
               Sort by view
             </button>
           </div>
           <div>
             <button
+              onclick="blogPage()"
               class="btn px-4 py-2 focus:bg-red-500 focus:text-white rounded-md bg-gray-100 font-semibold"
             >
-              <a href="./q&a.html" target="_blank">Blog</a>
+              <a>Blog</a>
             </button>
           </div>
         </div>
@@ -44,103 +45,10 @@
       <section
         id="category-tab-container"
         class="flex justify-center space-x-10 my-8"
-      >
-        <!-- <div class="flex justify-center space-x-6 my-8">
-          <div>
-            <button class="btn"></button>
-          </div>
-          <div>
-            <button class="btn"></button>
-          </div>
-          <div>
-            <button class="btn"></button>
-          </div>
-          <div>
-            <button class="btn"></button>
-          </div>
-        </div> -->
-        <!-- <a onclick="handleCategory()" class="btn" href="#"></a> -->
-      </section>
+      ></section>
 
       <!-- video card section -->
-      <!-- <section
-        id="video-card-container"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12 justify-items-center"
-      > -->
-      <section id="video-card-container">
-        <!-- <div
-          class="flex flex-col justify-center items-center text-center h-[60vh]"
-        >
-          <img class="h-[140px] w-[140px]" src="./img/Icon.png" alt="" />
-          <h3 class="text-4xl font-bold mt-4">
-            Oops!! Sorry, There is no
-            <br />
-            content here
-          </h3>
-        </div> -->
-
-        <!--  -->
-        <!-- <div class="card card-compact w-[312px] bg-base-100">
-          <figure>
-            <img
-              class="w-[312px] h-[200px] rounded-2xl"
-              src="https://i.ibb.co/L1b6xSq/shape.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="flex flex-col my-4">
-            <div class="flex">
-              <div id="img-div">
-                <img
-                  class="h-10 w-10 rounded-full mr-7"
-                  src="https://i.ibb.co/D9wWRM6/olivia.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h2 class="card-title">
-                  Building a Winning UX Strategy Using the Kano Model
-                </h2>
-                <p class="flex items-center">
-                  Awlad Hossain<span class="pl-2"><3</span>
-                </p>
-                <p>91k views</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!--  -->
-        <!-- <div class="card card-compact w-[312px] bg-base-100">
-          <figure>
-            <img
-              class="w-[312px] h-[200px] rounded-2xl"
-              src="${videoData?.thumbnail}"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="flex flex-col my-4">
-            <div class="flex">
-              <div>
-                <img
-                  class="h-10 w-10 rounded-full mr-3"
-                  src="${videoData?.authors[0].profile_picture}"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h2 class="card-title">${videoData?.title}</h2>
-                <p class="flex items-center">
-                  ${ videoData?.authors[0]?.profile_name }<span class="pl-2"
-                    >${ videoData?.authors[0]?.verified ? svgIcon : "" }</span
-                  >
-                </p>
-                <p>${videoData?.others?.views}</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </section>
+      <section id="video-card-container"></section>
     </main>
 
     <footer></footer>

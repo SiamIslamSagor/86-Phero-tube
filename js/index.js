@@ -6,9 +6,7 @@ const loadData = async () => {
       `https://openapi.programming-hero.com/api/videos/categories`
     );
     data = await res.json();
-    //   console.log(data);
     const allCategoryData = data.data;
-    //   console.log(allCategoryData);
     const tabContainer = document.getElementById("category-tab-container");
 
     allCategoryData.forEach((singleCategory) => {
@@ -19,14 +17,13 @@ const loadData = async () => {
      onclick="handleCategory(${singleCategory?.category_id})" class="btn" href="#">${singleCategory.category}</a>
     `;
       tabContainer.appendChild(div);
-      // console.log(singleCategory?.category_id);
     });
   } catch (error) {
     console.log("ERR:" + error);
   }
 };
 
-//
+// verified icon/logo/svg
 
 const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_11_290)">
@@ -42,19 +39,15 @@ const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
 
 const handleCategory = async (categoryObject) => {
   //
-  //   console.log(categoryObject);
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryObject}`
   );
   const data = await res.json();
-  //   console.log(data);s
   const categoryArray = data.data;
-  //   console.log(categoryArray.length);
   const videoContainer = document.getElementById("video-card-container");
   if (categoryArray.length == "0") {
     videoContainer.innerHTML = ``;
     videoContainer.classList = ``;
-    // console.log(videoContainer.classList);
     const div = document.createElement("div");
     div.classList = `flex flex-col justify-center items-center text-center h-[60vh]`;
     div.innerHTML = `
@@ -68,7 +61,6 @@ const handleCategory = async (categoryObject) => {
     videoContainer.appendChild(div);
     console.log(900000);
     console.log(categoryArray.length);
-    // document.body.style.backgroundColor = "yellow";
   } else {
     videoContainer.innerHTML = ``;
     categoryArray.forEach((videoData) => {
@@ -125,14 +117,13 @@ const oneMinuit = 60;
 
 const timeTextStyle = (formatTime, seconds) => {
   const formatResult = formatSecond(seconds);
-  // console.log(formatResult);
   return formatResult;
 };
 
 function formatSecond(seconds) {
-  const days = Math.floor(seconds / oneDay);
-  const hours = Math.floor((seconds % oneDay) / oneHour);
   const minutes = Math.floor(((seconds % oneMinuit) * oneMinuit) / oneMinuit);
+  const hours = Math.floor((seconds % oneDay) / oneHour);
+  const days = Math.floor(seconds / oneDay);
   let formatTime = "";
   if (days > 0) {
     formatTime += days + " days ";
@@ -144,6 +135,11 @@ function formatSecond(seconds) {
     formatTime += minutes + " min ";
   }
   return formatTime + "ago";
+}
+
+//blog:
+function blogPage() {
+  window.open("http://127.0.0.1:5500/blog.html", "_blank");
 }
 
 loadData();

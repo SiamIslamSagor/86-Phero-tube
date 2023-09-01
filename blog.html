@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q & A</title>
+    <!-- tailwind and daisy -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/85858dde4b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="container mx-auto">
+      <!-- nav section -->
+      <nav>
+        <div class="mt-12 mb-7">
+          <div class="flex justify-between items-center">
+            <div>
+              <img src="./img/Logo.png" alt="" />
+            </div>
+            <div>
+              <button
+                onclick="backHome()"
+                class="btn px-4 py-2 focus:bg-red-500 focus:text-white rounded-md bg-gray-100 font-semibold"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+                <a>Back</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </nav>
+    </header>
+
+    <main class="container mx-auto">
+      <!-- blog question section -->
+      <section
+        class="flex flex-col md:flex-row my-16 text-xl items-center justify-between"
+      >
+        <div>
+          <div>
+            <h2 class="text-4xl font-bold mb-4">OUR BLOG HERE...</h2>
+          </div>
+          <div class="flex flex-col space-y-4">
+            <h3 class="text-3xl">
+              In today's blog we will discuss the following topics
+            </h3>
+            <!-- ALL question -->
+            <ul>
+              <li>1. Discuss the scope of var, let, and const.</li>
+              <li>2. Use cases of null and undefined.</li>
+              <li>3. What do you mean by REST API?</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <img
+            class="w-96 h-60 mt-3 rounded-md md:h-64 lg:h-96 lg:w-[540px]"
+            src="./img/all variable.png"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <!-- blog answer section -->
+      <div>
+        <h2 class="text-5xl font-semibold my-5">lets's begin...</h2>
+      </div>
+
+      <!-- var -->
+      <section class="my-16 text-xl">
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row-reverse"
+        >
+          <div class="lg:max-w-2xl">
+            <div>
+              <h2 class="text-3xl font-medium my-3">var variable</h2>
+            </div>
+            <p class="max-w-sm lg:max-w-4xl">
+              var is a global scope variable. It can be defined once and used
+              anywhere in the program. It is used in both function scope and
+              block scope. The special feature of var is that it is hoisting. As
+              a result, even if it is defined between the function scope and the
+              block scope, it is hoisted up, thereby increasing the possibility
+              of external access and errors in the program. This is why we
+              usually do not declare var BF variables in programs.
+            </p>
+          </div>
+          <div>
+            <img
+              class="w-96 h-60 rounded-md md:w-80 md:h-56 lg:w-[500px] lg:h-96"
+              src="./img/var img.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- let -->
+      <section class="my-16 text-xl">
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row"
+        >
+          <div class="lg:max-w-2xl">
+            <div>
+              <h2 class="text-3xl font-medium my-3">let variable</h2>
+            </div>
+            <p class="max-w-sm lg:max-w-4xl">
+              let is a global variable. It is very similar to tie var. It can be
+              defined once and used anywhere in the program. It is used in both
+              function scope and block scope. But it doesn't do hoisting like
+              var . As a result, unauthorized access from the outside is
+              protected. As a result, we usually declare variables with let .
+            </p>
+          </div>
+          <div>
+            <img
+              class="w-96 h-60 rounded-md md:w-80 md:h-56 lg:w-[500px] lg:h-96"
+              src="./img/let img.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- const -->
+      <section class="my-16 text-xl">
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row-reverse"
+        >
+          <div class="lg:max-w-2xl">
+            <div>
+              <h2 class="text-3xl font-medium my-3">const variable</h2>
+            </div>
+            <p class="max-w-sm lg:max-w-4xl">
+              A const variable is an immutable variable. A const variable cannot
+              be reassigned. This is a block scope variable. We usually assign a
+              value that does not need to be changed to a constant variable.
+              Accessing a field or element is often assigned to a constant
+              variable while working on the website.
+            </p>
+          </div>
+          <div>
+            <img
+              class="w-96 h-60 rounded-md md:w-80 md:h-56 lg:w-[500px] lg:h-96"
+              src="./img/const img.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <hr class="my-5" />
+      <!-- null & undefine -->
+      <section class="my-16 text-xl">
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row"
+        >
+          <div class="lg:max-w-2xl">
+            <div>
+              <h2 class="text-3xl font-medium my-3">null & undefine</h2>
+            </div>
+            <p class="max-w-sm lg:max-w-4xl">
+              When we want to assign the value of a variable later or leave the
+              value of the variable empty, we use null or undefine. Here both
+              null and undefine are false or negative values.
+            </p>
+          </div>
+          <div>
+            <img
+              class="w-96 h-60 rounded-md md:w-80 md:h-56 lg:w-[500px] lg:h-96"
+              src="./img/null and undefine.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <hr class="my-5" />
+
+      <!-- REST API -->
+      <!-- null & undefine -->
+      <section class="my-16 text-xl">
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row-reverse"
+        >
+          <div class="lg:max-w-2xl">
+            <div>
+              <h2 class="text-3xl font-medium my-3">REST API</h2>
+            </div>
+            <p class="max-w-sm lg:max-w-4xl">
+              REST is an architectural style for designing APIs over the HTTP
+              protocol. Developers use the REST API when they need to provide
+              data directly from the server to the user of the web application
+              or site.
+              <br />
+              It has three main components. Namely –
+              <br />
+              1. Client&nbsp;&nbsp;&nbsp;&nbsp; 2.
+              Server&nbsp;&nbsp;&nbsp;&nbsp; 3. Wealth
+            </p>
+          </div>
+          <div>
+            <img
+              class="w-96 h-60 rounded-md md:w-80 md:h-56 lg:w-[500px] lg:h-96"
+              src="./img/rest api img.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container mx-auto">
+      <hr />
+      <p class="py-5 text-xl text-center">&copy;copy write 2023</p>
+    </footer>
+    <!-- script -->
+    <script src="./js/blog.js"></script>
+  </body>
+</html>
