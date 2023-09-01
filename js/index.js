@@ -14,7 +14,9 @@ const loadData = async () => {
     allCategoryData.forEach((singleCategory) => {
       const div = document.createElement("div");
       div.innerHTML = `
-    <a onclick="handleCategory(${singleCategory?.category_id})" class="btn" href="#">${singleCategory.category}</a>
+    <a
+    class="px-4 py-2 focus:bg-red-500 focus:text-white rounded-md bg-gray-100 font-semibold"
+     onclick="handleCategory(${singleCategory?.category_id})" class="btn" href="#">${singleCategory.category}</a>
     `;
       tabContainer.appendChild(div);
       // console.log(singleCategory?.category_id);
@@ -74,11 +76,18 @@ const handleCategory = async (categoryObject) => {
       div.innerHTML = `
     <div class="card card-compact w-[312px] bg-base-100">
     <figure>
-      <img
+      <div class = 'relative'>
+        <img
         class="w-[312px] h-[200px] rounded-2xl"
         src="${videoData?.thumbnail}"
         alt="Shoes"
-      />
+      />      
+        <p class = "absolute bottom-3 right-3 p-1 rounded-md bg-black text-white text-sm">${
+          videoData?.others?.posted_date
+            ? timeTextStyle(formatSecond, videoData?.others?.posted_date)
+            : ""
+        }</p>
+      </div>
     </figure>
     <div class="flex flex-col my-4">
       <div class="flex">
@@ -108,5 +117,34 @@ const handleCategory = async (categoryObject) => {
     });
   }
 };
+
+//time:
+const oneDay = 60 * 60 * 24;
+const oneHour = 60 * 60;
+const oneMinuit = 60;
+
+const timeTextStyle = (formatTime, seconds) => {
+  const formatResult = formatSecond(seconds);
+  // console.log(formatResult);
+  return formatResult;
+};
+
+function formatSecond(seconds) {
+  const days = Math.floor(seconds / oneDay);
+  const hours = Math.floor((seconds % oneDay) / oneHour);
+  const minutes = Math.floor(((seconds % oneMinuit) * oneMinuit) / oneMinuit);
+  let formatTime = "";
+  if (days > 0) {
+    formatTime += days + " days ";
+  }
+  if (hours > 0) {
+    formatTime += hours + " hrs ";
+  }
+  if (minutes > 0) {
+    formatTime += minutes + " min ";
+  }
+  return formatTime + "ago";
+}
+
 loadData();
 handleCategory(1000);
