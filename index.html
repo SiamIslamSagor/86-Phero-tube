@@ -59,10 +59,11 @@
       </section>
 
       <!-- video card section -->
-      <section
+      <!-- <section
         id="video-card-container"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12 justify-items-center"
-      >
+      > -->
+      <section id="video-card-container">
         <!-- <div
           class="flex flex-col justify-center items-center text-center h-[60vh]"
         >
@@ -73,6 +74,8 @@
             content here
           </h3>
         </div> -->
+
+        <!--  -->
         <!-- <div class="card card-compact w-[312px] bg-base-100">
           <figure>
             <img
@@ -83,68 +86,56 @@
           </figure>
           <div class="flex flex-col my-4">
             <div class="flex">
-              <img
-                class="h-10 rounded-full overflow-hidden mr-3"
-                src="https://i.ibb.co/rdTZrCM/dev.jpg"
-                alt=""
-              />
-              <h2 class="card-title">Python Full Course for free🐍</h2>
-            </div>
-            <p>Awlad Hossain <span>icon</span></p>
-            <p>91K views</p>
-          </div>
-        </div> -->
-
-        <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img
-              class="w-96 h-60"
-              src="https://i.ibb.co/L1b6xSq/shape.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img
-              class="w-96 h-60"
-              src="https://i.ibb.co/L1b6xSq/shape.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img
-              class="w-96 h-60"
-              src="https://i.ibb.co/L1b6xSq/shape.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+              <div>
+                <img
+                  class="h-10 w-10 rounded-full mr-7"
+                  src="https://i.ibb.co/D9wWRM6/olivia.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h2 class="card-title">
+                  Building a Winning UX Strategy Using the Kano Model
+                </h2>
+                <p class="flex items-center">
+                  Awlad Hossain<span class="pl-2"><3</span>
+                </p>
+                <p>91k views</p>
+              </div>
             </div>
           </div>
         </div> -->
+
+        <!--  -->
+        <div class="card card-compact w-[312px] bg-base-100">
+          <figure>
+            <img
+              class="w-[312px] h-[200px] rounded-2xl"
+              src="${videoData?.thumbnail}"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="flex flex-col my-4">
+            <div class="flex">
+              <div>
+                <img
+                  class="h-10 w-10 rounded-full mr-3"
+                  src="${videoData?.authors[0].profile_picture}"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h2 class="card-title">${videoData?.title}</h2>
+                <p class="flex items-center">
+                  ${ videoData?.authors[0]?.profile_name }<span class="pl-2"
+                    >${ videoData?.authors[0]?.verified ? svgIcon : "" }</span
+                  >
+                </p>
+                <p>${videoData?.others?.views}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

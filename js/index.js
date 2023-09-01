@@ -49,25 +49,29 @@ const handleCategory = async (categoryObject) => {
   const categoryArray = data.data;
   //   console.log(categoryArray.length);
   const videoContainer = document.getElementById("video-card-container");
-  if (categoryArray.length === 0) {
+  if (categoryArray.length == "0") {
+    videoContainer.innerHTML = ``;
     videoContainer.classList = ``;
     // console.log(videoContainer.classList);
     const div = document.createElement("div");
-    /* div.innerHTML = `
-   <h3 class="text-4xl font-bold mt-4">
-     Oops!! Sorry, There is no
-     <br />
-     content here
+    div.classList = `flex flex-col justify-center items-center text-center h-[60vh]`;
+    div.innerHTML = `
+    <img class="h-[140px] w-[140px]" src="./img/Icon.png" alt="" />
+    <h3 class="text-4xl font-bold mt-4">
+        Oops!! Sorry, There is no
+        <br />
+        content here
     </h3>
-    `; */
+    `;
     videoContainer.appendChild(div);
     console.log(900000);
-  }
-
-  videoContainer.innerHTML = ``;
-  categoryArray.forEach((videoData) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
+    console.log(categoryArray.length);
+    // document.body.style.backgroundColor = "yellow";
+  } else {
+    videoContainer.innerHTML = ``;
+    categoryArray.forEach((videoData) => {
+      const div = document.createElement("div");
+      div.innerHTML = `
     <div class="card card-compact w-[312px] bg-base-100">
     <figure>
       <img
@@ -85,20 +89,24 @@ const handleCategory = async (categoryObject) => {
             alt=""
           />
         </div>
-        <h2 class="card-title">${videoData?.title}</h2>
+        <div>
+          <h2 class="card-title">${videoData?.title}</h2>
+          <p class = 'flex items-center'> ${
+            videoData?.authors[0]?.profile_name
+          }<span class = 'pl-2'>${
+        videoData?.authors[0]?.verified ? svgIcon : ""
+      }</span></p>
+          <p>${videoData?.others?.views}</p>
       </div>
-      <p class = 'flex items-center'> ${
-        videoData?.authors[0]?.profile_name
-      }<span class = 'pl-2'>${
-      videoData?.authors[0]?.verified ? svgIcon : ""
-    }</span></p>
-      <p>${videoData?.others?.views}</p>
+      </div>
+      
     </div>
   </div>
     `;
-    videoContainer.classList = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12 justify-items-center`;
-    videoContainer.appendChild(div);
-  });
+      videoContainer.classList = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12 justify-items-center`;
+      videoContainer.appendChild(div);
+    });
+  }
 };
 loadData();
 handleCategory(1000);
