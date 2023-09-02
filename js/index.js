@@ -142,43 +142,45 @@ const handleCategory = async (categoryObject = 1000) => {
         categoryArray.forEach((videoData) => {
           const div = document.createElement("div");
           div.innerHTML = `
-    <div class="card card-compact w-[312px] bg-base-100">
-    <figure>
-      <div class = 'relative'>
-        <img
-        class="w-[312px] h-[200px] rounded-2xl"
-        src="${videoData?.thumbnail}"
-        alt="Shoes"
-      />      
-        <p id="format-time" class = "absolute bottom-3 right-3 rounded-md bg-black text-white text-sm">${
-          videoData?.others?.posted_date
-            ? timeTextStyle(formatSecond, videoData?.others?.posted_date)
-            : ""
-        }</p>
-      </div>
-    </figure>
-    <div class="flex flex-col my-4">
-      <div class="flex">
-        <div>
-          <img
-            class="h-10 w-10 rounded-full mr-3"
-            src="${videoData?.authors[0].profile_picture}"
-            alt=""
-          />
-        </div>
-        <div>
-          <h2 class="card-title">${videoData?.title}</h2>
-          <p class = 'flex items-center'> ${
-            videoData?.authors[0]?.profile_name
-          }<span class = 'pl-2'>${
+            <div class="card card-compact w-[312px] bg-base-100">
+            <figure>
+              <div class = 'relative'>
+                <img
+              class="w-[312px] h-[200px] rounded-2xl"
+                src="${videoData?.thumbnail}"
+                alt="Shoes"
+              />      
+                <p id="format-time" class = "absolute bottom-3 right-3 rounded-md bg-black text-white text-sm">${
+                  videoData?.others?.posted_date
+                    ? timeTextStyle(
+                        formatSecond,
+                        videoData?.others?.posted_date
+                      )
+                    : ""
+                }</p>
+              </div>
+            </figure>
+            <div class="flex flex-col my-4">
+              <div class="flex">
+                <div>
+                  <img
+                    class="h-10 w-10 rounded-full mr-3"
+                    src="${videoData?.authors[0].profile_picture}"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h2 class="card-title">${videoData?.title}</h2>
+                  <p class = 'flex items-center'> ${
+                    videoData?.authors[0]?.profile_name
+                  }<span class = 'pl-2'>${
             videoData?.authors[0]?.verified ? svgIcon : ""
           }</span></p>
-          <p>${videoData?.others?.views}</p>
-      </div>
-      </div>
-      
-    </div>
-  </div>
+                  <p>${videoData?.others?.views}</p>
+              </div>
+              </div>
+            </div>
+          </div>
     `;
           videoContainer.classList = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12 justify-items-center`;
           videoContainer.appendChild(div);
